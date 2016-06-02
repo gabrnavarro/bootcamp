@@ -1,0 +1,51 @@
+.red{
+	background-color:  #F00;
+	width: 960px;
+	height: 150px;
+}
+
+.green{
+	background-color: 	#00FF00;
+	width: 320px;
+	min-height: 200px;
+	float: left;
+}
+
+.yellow{
+	background-color: #FFFF00;
+	float: left;
+	width: 320px;
+	min-height: 100px;
+}
+
+.purple{
+	float: left;
+	background-color: #694489;
+	width: 320px;
+	min-height: 100px;
+	
+}
+
+
+.grey{
+	float: left;
+	width: 960px;
+	height: 100px;
+	background-color: #808080;
+}
+
+.blue{
+	float: left;
+	width: 640px;
+	min-height: 100px;
+	background-color: #0000FF;
+}
+
+.green, .blue, .yellow, .purple{
+	padding-bottom: 10000px;
+	margin-bottom: -10000px;
+}
+
+.row, .container {
+	overflow: hidden;
+}

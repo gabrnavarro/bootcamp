@@ -1,0 +1,36 @@
+.row {
+  overflow: hidden;
+}
+
+.padded{
+	float: left;
+	padding: 10px;
+	background-color: grey;
+	width: 678px;
+	border:1px solid blue;
+	border-top: 1px solid red;
+}
+
+.yellow{
+	background-color: yellow;
+	width:960px;
+	height:150px;
+	border:1px solid rgb(255,0,0);
+	border-bottom: 0px;
+}
+.blue{
+	float: left;
+	padding-bottom: 100%;
+	margin-bottom: -100%;
+	background-color: #00688B; 
+	width: 260px;
+	border:1px solid blue;
+	border-top:1px solid blue;
+	}
+
+.red{
+	background-color: red;
+	height: 200px; 
+	width: 960px;
+	border:1px solid blue
+}

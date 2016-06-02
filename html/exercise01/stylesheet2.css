@@ -1,0 +1,91 @@
+.grey{
+	background-color: #BFBFBF;
+	width: 960px;
+	height: 150px;
+}
+
+
+.green{
+	float: left;
+	position: relative;
+	width: 160px;
+	min-height: 200px;
+	background-color: 	#A6C249;
+}
+
+.purple{
+	float:left ;
+	width: 600px;
+	min-height: 200px;
+	font-size:11;
+	background-color: #7030A2;
+}
+
+.blue{
+	float: left;
+	width: 200px;
+	min-height: 200px;
+	background-color: #0F6FC6; 
+}
+
+.red{
+	float: left;
+	width: 960px;
+	height: 100px;
+	background-color:  #F00;
+}
+
+.square{
+	background-color: #FFF;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+}
+
+.bsquare{
+	background-color: #FFF;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+
+}
+.fixed{
+	position: fixed;
+	width: 50px;
+	height: 30px;
+	background-color: #FBC600;
+	border: 1px solid #00688B;
+	top: 160px;
+	left: 950px;
+
+}
+.top{top:150;}
+.middle{top:50%;
+		margin-top:-10px;/*half of the .box height*/
+	}
+.bottom{bottom:0;}
+
+.left{left:0;}
+.center{left:50%;margin-left:-10px;/*half of the .box width*/}
+.right{right:0;}
+
+.green, .purple, .blue{
+	padding-bottom: 100%;
+	margin-bottom: -100%;
+}
+
+.boxes{
+	width: 960px;
+	min-height: 450px;
+}
+
+
+
+.clear{
+	clear: both;
+}
+.row{
+	overflow: hidden;
+	width: 960px;
+}
+

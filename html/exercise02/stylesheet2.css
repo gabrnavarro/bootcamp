@@ -1,0 +1,154 @@
+.boxleft{
+	width: 50%;
+	float: left;
+	left:0;
+	top: 100px;
+	position: absolute;
+	height: 30px;
+	background-color: #F6F6ED;
+	border-top: 1px solid #EBEBDA;
+	border-bottom: 1px solid #EBEBDA;
+}
+.boxright{
+	width: 50%;
+	float: right;
+	top: 147px;
+	right:0;
+	position: absolute;
+	height: 19px;
+	background-color: #F6F6ED;
+	border-top: 1px solid #EBEBDA;
+	border-bottom: 1px solid #EBEBDA;
+}
+.faux{
+	width: 760px;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	background:  url("faux.png") center repeat-y;
+}
+.container{
+	width: 750px;
+	height: 100%;
+	border: 1px solid black;
+	margin: 0 auto;
+	position: relative;
+
+	background: #FFF;
+	z-index: 100;
+	box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.2);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#c0c0c0')";
+ 	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#c0c0c0');
+}
+
+.body{
+	width: 730px;
+	height: 730px;
+	/*border: 1px solid black;*/
+	margin: 10px;
+	position: relative;
+}
+
+.sidebar{
+	float: right;
+	width: 28%;
+	height: 100%;
+	margin-top: 56px;
+	/*border: 1px solid black;*/
+	position: relative;
+}
+.main{
+	padding-left: 20px;
+	float: left;
+	width: 65%;
+	height: 100%;
+	/*border: 1px solid black;*/
+	position: relative;
+}
+
+.color{
+	color: #A1A07B;
+}
+.small{
+	font-size: 14px;
+}
+.green{
+	color: #A9A867;
+}
+
+.lgreen{
+	color: #8FB34F;
+	font-style: bold;
+	font-weight: bold;
+}
+
+.align{
+	text-align: justify;
+}
+
+h2.archives{
+
+	width: 198px;
+	height: 25px;
+	background: url("archives.png");
+	text-indent: -9999px;
+}
+h2.download{
+
+	width: 275px;
+	height: 27px;
+	background: url("download.png");
+	text-indent: -9999px;
+}
+h1.header{
+	width: 746px;
+	height: 248px;
+	background: url("header.png");
+	text-indent: -9999px;
+}
+h2.so_what{
+
+	width: 427px;
+	height: 47px;
+	background: url("so_what.png");
+	text-indent: -9999px;
+}
+h2.requirements{
+	width: 429px;
+	height: 34px;
+	background: url("requirements.png");
+	text-indent: -9999px;
+}
+h2.road_to{
+	width: 486px;
+	height: 45px;
+	background: url("road_to.png");
+	text-indent: -9999px;
+}
+
+h2.tags{
+	width:180px;
+	height: 18px;
+	background: url("tags.png");
+	text-indent: -9999px;
+	margin-left: 60%;
+}
+
+a{
+	color: #A9A867;
+	text-decoration: none;
+}
+
+.tr{
+	font : normal normal 12px/18px Georgia, "Times New Roman", Times, serif;
+	font-style : italic;
+}
+
+.ls{
+	font : normal normal 11px/16px "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Lucida, Arial, Helvetica, sans-serif;
+}
+
+.italic{
+	font-weight : normal;
+	font-style : italic;
+}
