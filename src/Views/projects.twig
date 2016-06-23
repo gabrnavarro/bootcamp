@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{base_url()}} /src/Views/css/stylesheet.css">
+</head>
+
+<body>
+<h1>Welcome, {{session.username}}!</h1>
+
+<a href = '/logout'>Logout</a>
+
+
+{%if projects is defined%}
+<div class="table-title">
+<h4>Projects</h4>
+</div>
+<table class="table-fill">
+	<tr>
+		<th> Name</td>
+		<th> Budget</th>
+		<th> Assignments</th>
+    {% for i in projects %}
+    <tr>
+        <td> {{i.Name}}</td>
+        <td> {{i.Budget}}</td>
+        <td> <a href = "/projects/assignments">Assignments</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{%else%}
+<p>The projects table is empty! Create one using the link below!</p>
+{%endif %}
+
+
+<p> Other tasks</p>
+<p><a href =  '/projects/create'>Create Project</a></p>
+<p><a href = '/persons/create'>Create Person</a></p>
+
+</body>
+</html>

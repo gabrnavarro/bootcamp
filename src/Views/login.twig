@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{base_url()}} /src/Views/css/stylesheet.css">
+</head>
+
+<body>
+<div class="login-page">
+  <h1 style="color: #FFF">The Projector</h1>
+  <div class="form">
+      <form class="login-form" action="/" method="post">
+      <span style = "color: red"> {{flash.message('userErr')[0]}}</span>
+      <input type="Username" name="Username" value="{{flash.message('username')[0]}}" placeholder="Username or email">
+      <span style = "color: red"> {{flash.message('passErr')[0]}}</span>
+      <input type="Password" name="Password" placeholder="Password">
+      <button>login</button>
+    </form>
+  </div>
+</div>
+
+
+</body>
+
+</html>
+
