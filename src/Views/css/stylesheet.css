@@ -10,10 +10,14 @@
   z-index: 1;
   background: #FFFFFF;
   max-width: 360px;
-  margin: 0 auto 100px;
+  margin: 0 auto 50px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.member{
+  width: 100%;
+  border-top: 1px solid #76b852;
 }
 .form input {
   font-family: "Roboto", sans-serif;
@@ -39,6 +43,7 @@
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+
 }
 .form button:hover,.form button:active,.form button:focus {
   background: #43A047;
@@ -99,13 +104,25 @@ body {
   -moz-osx-font-smoothing: grayscale;      
 }
 
+ul{
+  list-style-type:none;
+}
+
 
 div.table-title {
    display: block;
-  margin: auto;
+  margin: 10px auto;
   max-width: 600px;
   padding:5px;
   width: 100%;
+}
+.margined{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+select{
+  width: 200px;
+  height: 30px;
 }
 
 .table-title h3 {

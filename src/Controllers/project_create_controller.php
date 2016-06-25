@@ -49,8 +49,43 @@ class ProjectController{
 
 			}
 		public function assign_project_redirect($request, $response){
-			$this->view->render($response, 'project_assign.twig');
+			$settings = $this->settings; //$settings[servername] 
+			$servername = $settings['servername'];
+			$username = $settings['username'];
+			$password = $settings['password'];
+			$dbname = $settings['dbname'];
+
+
+			try {
+		    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		    // set the PDO error mode to exception
+		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		    }
+			catch(PDOException $e)
+		    {
+		    echo "Connection failed: " . $e->getMessage();
+		    }
+
+			$idnow = $_GET["projects_id"];
+
+			$query1 = $conn->prepare("SELECT person_id, Firstname, Lastname from persons where $idnow!=project_id OR project_id IS NULL");
+			$query1->execute();
+			$result1 = $query1;
+			$results1 = [];
+		
+			foreach($result1 as $row1){
+			$results1[] = $row1;
+			}
+
+			
+
+
+			$this->view->render($response, 'project_assign.twig', array('nonmembers'=>$results1));
+
+
 		}
+
+
 
 
 }

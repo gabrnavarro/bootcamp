@@ -97,7 +97,7 @@ class LoginController{
 		    }
 
 
-		$result = $conn->prepare("SELECT Name, Budget FROM projects");
+		$result = $conn->prepare("SELECT Name, Budget, projects_id FROM projects");
 		$result->execute();
 		$output = $result;
 
