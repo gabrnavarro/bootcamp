@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%verbatim%}
+<html ng-app>
+<head>
+<link rel="stylesheet" href="/src/Views/css/stylesheet.css">
+<script src="/src/Views/jquery-3.0.0.min.js"></script>
+<script src="/src/Views/js/angular.min.js"></script>
+<script src="/src/Views/js/main.js"></script>
+</head>
+<body>
+<h1 id="header"></h1>
+<a href = '/logout'>Logout</a>
+<a href = '/projects'>Back to projects</a>
+<div class="table-title">
+<h3>Project Assignments Smartforms</h3>
+</div>
+<div class="form">
+	<p> Select new member</p>
+	<select name="memberselect" id="name">
+	</select>
+	<button class ="margined" id="addmember">Add member</button>
+</form>	
+	<div class="member">
+		<h2>Current members</h2>
+		<ul id="memheader">
+		</ul>
+	</div>
+</div>	
+
+
+
+
+{%endverbatim%}
+
+</body>
+</html>

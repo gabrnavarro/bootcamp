@@ -19,11 +19,15 @@ $app->post('/persons/create', 'PersonsController:create_form_submit')->add('Logi
 
 $app->get('/projects/assignments', 'ProjectController:assign_project_redirect')->add('LoginController:login_check');
 
-$app->get('/projects/member_info', 'ProjectController:send_member_info');
+$app->get('/projects/member_info', 'ProjectAssignController:send_member_info');
 
-$app->post('/projects/assign', 'ProjectController:add_member');
+$app->get('/projects/nonmember_info', 'ProjectAssignController:send_nonmember_info');
 
-$app->post('/projects/unassign', 'ProjectController:remove_member');
+$app->post('/projects/assign', 'ProjectAssignController:add_member');
+
+$app->post('/projects/unassign', 'ProjectAssignController:remove_member');
+
+$app->get('/session', 'LoginController:session');
 
 
 

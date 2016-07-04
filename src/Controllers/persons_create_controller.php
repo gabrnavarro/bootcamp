@@ -54,46 +54,32 @@ class PersonsController{
 	   		$userErr = $exception->getMainMessage();
 			}
 
+
 			try {
-		    $passValidator->assert($Password);
-			} catch(NestedValidationException $exception) {
-		    $errors = $exception->findMessages([
-		    'alnum' => 'Password must contain only letters and digits. ',
-		    'length' => 'Password must have length of 7 to 11 characters. ',
-		    'NoWhitespace' => 'Password must not contain spaces. '			
-		    ]);
-			$passErr = $errors['alnum'] . $errors['length'] . $errors['NoWhitespace'];
-		}
+			    $passValidator->assert($Password);
+				} catch(NestedValidationException $exception) {
+			    $errors = $exception->findMessages([
+				    'alnum' => 'Password must contain only letters and digits. ',
+				    'length' => 'Password must have length of 7 to 11 characters. ',
+				    'NoWhitespace' => 'Password must not contain spaces. '			
+			    ]);
+				$passErr = $errors['alnum'] . $errors['length'] . $errors['NoWhitespace'];
+			}
 
-
-
-
-
-			
 
 			if($userErr == "" && $passErr == "" && $FirstErr=="" && $LastErr ==""){
 			$settings = $this->settings; 
-			$servername = $settings['servername'];
-			$username = $settings['username'];
-			$password = $settings['password'];
-			$dbname = $settings['dbname'];
+			
 
-			try {
-		    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-		    // set the PDO error mode to exception
-		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    }
-			catch(PDOException $e)
-		    {
-		    echo "Connection failed: " . $e->getMessage();
-		    }
+			$connection = new ConnectionController();
+			$conn = $connection->connect($settings['servername'], $settings['username'], $settings['password'], $settings['dbname']);
+		   	$query = $connection->InsertPerson($conn, $Lastname, $Firstname, $Username, $Password);
 
-		    $conn->exec("INSERT into persons(Lastname, Firstname, Username, Password) values('$Lastname', '$Firstname','$Username', '$Password')");
 			echo "insert success";
 
 			return $response->withRedirect('/projects');
-
 			}
+
 			else{
 				$this->flash->addMessage('FirstErr', $FirstErr);
 				$this->flash->addMessage('LastErr', $LastErr);
@@ -102,9 +88,5 @@ class PersonsController{
 
 				return $response->withRedirect('/persons/create');
 			}
-
-
 		}
-
-
 }

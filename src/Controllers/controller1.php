@@ -74,27 +74,17 @@ class LoginController{
 		}
 	}
 
+	public function session($request, $response){
+		echo json_encode($_SESSION);
+	}
+
 	public function projects_redirect($request, $response){
 		$settings = $this->settings; //$settings[servername] 
-		$servername = $settings['servername'];
-		$username = $settings['username'];
-		$password = $settings['password'];
-		$dbname = $settings['dbname'];
 		$empty= "";
 
 
-
-
-
-		try {
-		    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-		    // set the PDO error mode to exception
-		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    }
-		catch(PDOException $e)
-		    {
-		    echo "Connection failed: " . $e->getMessage();
-		    }
+		$connection = new ConnectionController();
+		$conn = $connection->connect($settings['servername'], $settings['username'], $settings['password'], $settings['dbname']);
 
 
 		$result = $conn->prepare("SELECT Name, Budget, projects_id FROM projects");
@@ -131,9 +121,6 @@ class LoginController{
 		session_destroy();
 		return $response->withRedirect('/');
 	}
-
-
-
 
 
 

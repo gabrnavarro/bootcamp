@@ -16,8 +16,19 @@ $(function(){
 	var first = getUrlVars()["projects_id"];
 	var $currmems = $('#memheader');
 	var $name = $('#name');
+	var $header = $('#header');
 	var memberjson;
 
+
+	$.ajax({
+	  url: "/session",
+	  type: "get", //send it through get method
+	  success: function(response){
+	  	memberjson = JSON.parse(response);
+	  	$header.append('Welcome, ' +memberjson.username+ '!');
+	  }
+
+	  });
 	$.ajax({
 	  url: "/projects/member_info",
 	  type: "get", //send it through get method
@@ -25,11 +36,26 @@ $(function(){
 	  success: function(response) {
 	  	memberjson = JSON.parse(response);
 	    $.each(JSON.parse(response), function(i, member){
-	    	$currmems.append(' <li id= '+member.person_id+'> '+ member.Firstname +' '+member.Lastname+' <a href="javascript:;" id ='+member.person_id+' > Remove</a> </li> ');
+	    	$currmems.append(' <li id= '+member.person_id+'> '+ member.Firstname +' '+member.Lastname+' <a class= "remove" href="javascript:;" id ='+member.person_id+' > Remove</a> </li> ');
 	    	});
 
 	  }
 	});
+
+	$.ajax({
+	  url: "/projects/nonmember_info",
+	  type: "get", //send it through get method
+	  data:{projects_id:first},
+	  success: function(response) {
+	  	memberjson = JSON.parse(response);
+	    $.each(JSON.parse(response), function(i, Anothermember){
+	    	$name.append(' <option value= '+Anothermember.person_id+'> '+Anothermember.Firstname+' '+Anothermember.Lastname+' </option>');
+	    	});
+
+	  }
+	});
+
+
 
 	$('#addmember').on('click', function(){
 
@@ -47,7 +73,7 @@ $(function(){
 			success: function(newMember){
 				memberjson=JSON.parse(newMember);
 				 $.each(JSON.parse(newMember), function(i, newMember){
-		    	$currmems.append(' <li id= '+newMember.person_id+'> '+ newMember.Firstname +' '+newMember.Lastname+' <a href="javascript:;" id ='+newMember.person_id+' > Remove</a> </li> ');
+		    	$currmems.append('<li id= '+newMember.person_id+'> '+ newMember.Firstname +' '+newMember.Lastname+' <a class= "remove" href="javascript:;" id ='+newMember.person_id+' > Remove</a> </li> ');
 
 		    	});
 
@@ -58,7 +84,7 @@ $(function(){
 
 	});
 
-	$(document).on('click',"a", function(){
+	$(document).on('click',"a.remove", function(){
 		var member = {
 			name: $(this).attr("id"),
 		};
