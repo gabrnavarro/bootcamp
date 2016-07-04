@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{base_url()}} /src/Views/css/stylesheet.css">
+</head>
+
+<body>
+<h1>Welcome, {{session.username}}!</h1>
+<a href = '/logout'>Logout</a>
+
+
+<div class="table-title">
+<h3>Create a project</h3>
+</div>
+<div class="form">
+<form action = '/projects/create' method = "post">
+	<p><input type="Code" name="Code" placeholder="Code"></p>
+	<p><input type="Name" name="Name" placeholder="Name"></p>
+	<p><input type="Budget" name="Budget" placeholder="Budget"></p>
+	<p><input type="Remarks" name="Remarks" placeholder="Remarks"></p>
+	<button>Submit</button>
+</form>
+</div>
+
+</body>
+</html>

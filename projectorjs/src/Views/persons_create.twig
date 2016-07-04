@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{base_url()}} /src/Views/css/stylesheet.css">
+</head>
+
+<body>
+<h1>Welcome, {{session.username}}!</h1>
+<a href = '/logout'>Logout</a>
+
+<div class="table-title">
+<h3>Create a person</h3>
+</div>
+<div class="form">
+<form class="login-form" action = '/persons/create' method = "post">
+	<p><input type="Lastname" name="Lastname" placeholder="Lastname"></p>
+	<span style = "color: red"> {{flash.message('FirstErr')[0]}}</span>
+	<p><input type="Firstname" name="Firstname" placeholder="Firstname"></p>
+	<span style = "color: red"> {{flash.message('LastErr')[0]}}</span>
+	<p><input type="Username" name="Username" placeholder="Username"></p>
+	<span style = "color: red"> {{flash.message('userErr')[0]}}</span>
+	<p><input type="Password" name="Password" placeholder="Password"></p>
+	<span style = "color: red"> {{flash.message('passErr')[0]}}</span>
+	<button>Submit</button>
+</form>
+</div>
+
+</body>
+</html>
